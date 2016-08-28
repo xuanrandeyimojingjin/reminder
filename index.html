@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" ng-app="reminder">
+<head>
+    <meta charset="UTF-8">
+    <title>iCound</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body ng-controller="mainCtrl" ng-click="showcard=false">
+<div class="reminder">
+    <div class="lists">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="title">提醒事项</div>
+            <div class="plus" ng-click="add($event)">
+                <div class="plus-inner"></div>
+            </div>
+        </div>
+        <ul class="list">
+            <li class="plan">
+                <span class="plan-icon"></span>
+                <span>已计划</span>
+                <div class="line"></div>
+            </li>
+            <li ng-repeat="v in database" ng-click="setcurrent($index)"
+            ng-class="{active:v===currentlist}">
+                <div class="theme-icon" ng-class="v.color"></div>
+                <input type="text" ng-model="v.listName">
+                <div class="line2"></div>
+            </li>
+
+
+        </ul>
+    </div>
+    <div class="content" ng-init="showcard=false">
+        <div class="content-inner">
+            <div class="search">
+                <div class="search-box">
+                    <span class="search-icon"></span>
+
+                </div>
+                <input class="sousuo" placeholder="搜索所有提醒" ng-click='focus($event)' ng-model='filt'>
+
+            </div>
+            <div class="search-mid" ng-class="currentlist.color" >
+                <div class="search-mid-title">
+                    <h2 ng-bind="currentlist.listName"></h2>
+                    <div class="options" ng-click="showcard=!showcard;cancel($event)" >选项</div>
+                </div>
+                <div  class="option-detail" ng-show="showcard;" ng-click="cancel($event)">
+                    <div class="container">
+                        <input type="text" class="i-name" ng-model="currentlist.listName" ng-class="currentlist.color">
+                        <p class="color-list">列表颜色</p>
+                        <ul class="clearfix">
+                            <li  ng-repeat="v in colors" ng-class="[v,{'active':(v==currentlist.color)}]" class="{{v}}" ng-click="currentlist.color=v"><span class="circle {{v}} "></span></li>
+                        </ul>
+                        <span  ng-click="showcard=false;deletelist(currentlist.id);saveData()" class="op-delete">删除</span>
+                        <span class="op-cancle" ng-click="showcard=false;cancel($event)">取消</span>
+                    </div>
+                </div>
+                <div class="search-mid-main" >
+                    <div class="line-top"></div>
+                    <div class="item-done" ng-click="toggleshowdone()" ng-show="currentlist">
+                        <span class="state" ng-class="{active:retract}" ></span>已完成{{count()}}项
+                    </div>
+                    <div class="item {{currentlist.color}}" ng-show="v.isDone&&retract"  ng-repeat="v in currentlist.todos|filter:{isDone:true} track by $index" ng-class="{'item-active':v==currenttodo}" ng-click="setcurrenttodo(v)">
+                        <div class="control checked" ng-click="v.isDone=!v.isDone;saveData()"></div>
+                        <input type="text" ng-model="v.name" value="v.name" ng-change="saveDate()" ng-click="focus($event)">{{v.date| date:'yyyy-MM-dd HH:mm:ss'}}
+                        <div class="row-top" ng-hide="v==currenttodo"></div>
+                        <div class="todo-detail" ng-click="deletetodo()"  ng-show="v==currenttodo">删除</div>
+                    </div>
+                    <div class="divider" ng-show="retract&&count()!==0"></div>
+                    <!--<hr>-->
+                    <div class="item {{currentlist.color}}" ng-repeat="v in currentlist.todos|filter:{isDone:false} track by $index" ng-class="{'item-active':v==currenttodo}" ng-click="setcurrenttodo(v)">
+                        <div class="control unchecked"  ng-click="v.isDone=!v.isDone;saveData()"></div>
+                        <input type="text"ng-model="v.name" value="v.name" ng-change="saveDate()" ng-click="focus($event)">{{v.date| date:'yyyy-MM-dd HH:mm:ss'}}
+                        <div class="row-top" ng-hide="v==currenttodo"></div>
+                        <div class="todo-detail" ng-click="deletetodo()"  ng-show="v==currenttodo">删除</div>
+                    </div>
+                    <div class="item new" ng-click="addtodo()" ng-show="currentlist">新条目
+                        <div class="row-top"></div>
+                        <div class="row-bottom"></div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+            <!--<div id="todo-detail" class="options-detail" >
+                <div class="container">
+                    <span ng-click="deletetodo()" class="op-delete">删除</span>
+                    <span class="op-cancle" ng-click="showcard=false;cancel($event)">取消</span>
+
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

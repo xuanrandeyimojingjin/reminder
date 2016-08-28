@@ -1,0 +1,129 @@
+*{
+	margin: 0;
+	padding: 0;
+	position: relative;
+	list-style:none;
+	text-decoration: none;
+}
+body{
+	font-family: "Helvetica Neue","微软雅黑",sans-serif;
+	font-size: 15px;
+	width: 100%;
+	overflow-x: hidden;
+}
+img{
+	border:none;
+}
+%clear{
+	content:'';
+	display: block;
+	clear:both;
+	line-height: 0;
+	height:0;
+}
+@mixin zuoyou{
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+@mixin shangxia{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+@mixin zhong{
+	position: absolute;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:auto}
+@mixin cube($size){
+	width: $size;
+	height: $size;
+	background: deeppink;
+}
+@mixin matrix($w,$h){
+	width: $w;
+	height: $h;
+	background:yellow;
+}
+@mixin circle($size){
+	width:$size;
+	height:$size;
+	border-radius: 50%;
+	background: green;
+}
+$number:12;
+$l-device:3000px;
+$m-device:1068px;
+$s-device:768px;
+$list:(
+	'l':$l-device,
+	'm':$m-device,
+	's':$s-device
+	);
+.row{
+	position: relative;
+	&::after{
+		content: '';
+		display: block;
+		clear:both;
+		line-height: 0;
+		height: 0;
+	}
+}
+.col{
+	position: relative;
+	float: left;
+}
+@each $k in map_keys($list){
+	@media screen and (max-width:map_get($list,$k)){
+		@for $i from 1 through $number{
+			.col.#{$k}#{$i}{
+				width: percentage($i/$number);
+			}
+		}
+	}
+}
+@mixin ons{
+	@media screen and (max-width: $s-device){
+		@content;
+	}
+}
+@mixin onm{
+	@media screen and (max-width: $m-device){
+		@content;
+	}
+}
+@font-face{
+	font-family: "cuti";
+	src:url("../fonts/cuti.woff") format("woff");
+}
+@font-face{
+	font-family: "jicu";
+	src:url("../fonts/jicu.woff") format("woff");
+}
+@font-face{
+	font-family: "jixi";
+	src:url("../fonts/jixi.woff") format("woff");
+}
+@font-face{
+	font-family: "zhengchang";
+	src:url("../fonts/zhengchang.woff") format("woff");
+}
+
+/*@font-face{
+	font-family: "biezhen";
+	src:url("../fonts/biezhen.woff") format("woff");
+}
+.icon{
+	font-family: "biezhen";
+	font-size: 80px;
+	margin-top: 44px;
+}
+.icon-biezhen::before{ 
+	content: "\e652"; 
+}*/

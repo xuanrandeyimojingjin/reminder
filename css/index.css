@@ -1,0 +1,697 @@
+body, ul, li, p, h1, h2, h3, h4, input, form {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reminder .lists {
+  width: 300px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #383836;
+}
+
+.reminder .lists .header {
+  height: 44px;
+  border-bottom: 1px solid #1a1a1a;
+  position: relative;
+}
+
+.reminder .lists .header .logo {
+  width: 56px;
+  height: 16px;
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  background: url(../imgs/packed-5.png) no-repeat 0px -588px;
+}
+
+.reminder .lists .header .title {
+  position: absolute;
+  top: 0;
+  left: 74px;
+  line-height: 44px;
+  font-size: 20px;
+  color: #999;
+}
+
+.reminder .lists .header .title:hover {
+  color: #ccc;
+}
+
+.reminder .lists .header .plus {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 0;
+  cursor: pointer;
+}
+
+.reminder .lists .header .plus .plus-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 23px;
+  height: 23px;
+  background: url(../imgs/packed-5.png) no-repeat -23px -526px;
+}
+
+.reminder .lists .list li {
+  position: relative;
+  color: #fff;
+  font-size: 17px;
+  height: 44px;
+  line-height: 44px;
+  padding-left: 54px;
+}
+
+.reminder .lists .list li .plan-icon {
+  position: absolute;
+  top: 2px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  background: url(../imgs/packed-5.png) no-repeat 0 -359px;
+}
+
+.reminder .lists .list li .line {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  background: url(../imgs/packed-1.png);
+}
+
+.reminder .lists .list li .theme-icon {
+  position: absolute;
+  left: 22px;
+  top: 15px;
+  width: 17px;
+  height: 17px;
+  background-image: url(../imgs/packed-5.png);
+  background-repeat: no-repeat;
+}
+
+.reminder .lists .list li .theme-icon.green {
+  background-position: -85px -571px;
+}
+
+.reminder .lists .list li .theme-icon.yellow {
+  background-position: -34px -571px;
+}
+
+.reminder .lists .list li .theme-icon.blue {
+  background-position: -68px -571px;
+}
+
+.reminder .lists .list li .theme-icon.orange {
+  background-position: -51px -571px;
+}
+
+.reminder .lists .list li .theme-icon.purple {
+  background-position: -17px -571px;
+}
+
+.reminder .lists .list li .theme-icon.brown {
+  background-position: -133px -549px;
+}
+
+.reminder .lists .list li .theme-icon.red {
+  background-position: -102px -571px;
+}
+
+.reminder .lists .list li input {
+  display: block;
+  border: none;
+  outline: none;
+  width: 246px;
+  height: 100%;
+  background: transparent;
+  color: #fff;
+  font-size: 17px;
+}
+
+.reminder .lists .list li .line2 {
+  width: 85%;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  background: url(../imgs/packed-1.png);
+}
+
+.reminder .lists .list li.active {
+  background: #2d2d2b;
+}
+
+.reminder .lists .list li.active .line2 {
+  display: none;
+}
+
+.reminder .content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 300px;
+  right: 0;
+  background: url(../imgs/packed-4.png);
+}
+
+.reminder .content .content-inner .search {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 0;
+  height: 44px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.35);
+}
+
+.reminder .content .content-inner .search .search-box {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.reminder .content .content-inner .search .search-box .search-icon {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /*top:13px;
+          left:14px;*/
+  background: url(../imgs/packed-5.png) no-repeat -138px -359px;
+}
+
+.reminder .content .content-inner .search .sousuo {
+  display: block;
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 500px;
+  position: absolute;
+  top: 0;
+  left: 54px;
+  line-height: 44px;
+  color: #bbb;
+  font-size: 18px;
+}
+
+.reminder .content .content-inner .search-mid {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 69px;
+  /*background-image: url(../imgs/packed-5.png);
+      background-repeat: no-repeat;*/
+}
+
+.reminder .content .content-inner .search-mid .search-mid-title {
+  font-size: 26px;
+  line-height: 1.2;
+  cursor: default;
+  position: relative;
+  margin-bottom: 10px;
+  height: 48px;
+  padding-left: 28px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-title .options {
+  position: absolute;
+  right: 20px;
+  top: 19px;
+  cursor: pointer;
+  font-size: 19px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail {
+  width: 355px;
+  height: 226px;
+  position: absolute;
+  top: -45px;
+  right: 55px;
+  background: white;
+  z-index: 20;
+}
+
+.reminder .content .content-inner .search-mid .option-detail::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  bottom: 0;
+  padding: 4px;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15), 0 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  padding: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container .i-name {
+  width: 314px;
+  height: 42px;
+  font-size: 25px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 13px;
+  box-sizing: border-box;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container .color-list {
+  color: #000;
+  padding-left: 3px;
+  line-height: 55px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #ccc;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul li {
+  width: 33px;
+  height: 33px;
+  margin-left: 10px;
+  float: left;
+  cursor: pointer;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul li .circle {
+  display: block;
+  width: 25px;
+  height: 25px;
+  margin: 4px 0 0 4px;
+  background-image: url("../imgs/stylesheet-1.png");
+  background-repeat: no-repeat;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .green.circle {
+  background-position: 0px -256px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .green.active {
+  background: url("../imgs/stylesheet-1.png") 0px -33px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .yellow.circle {
+  background-position: 0px -306px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .yellow.active {
+  background: url("../imgs/stylesheet-1.png") 0px -99px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .blue.circle {
+  background-position: 0px -281px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .blue.active {
+  background: url("../imgs/stylesheet-1.png") 0px -66px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .orange.circle {
+  background-position: 0px -381px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .orange.active {
+  background: url("../imgs/stylesheet-1.png") 0 -198px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .purple.circle {
+  background-position: 0px -231px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .purple.active {
+  background: url("../imgs/stylesheet-1.png") 0 0;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .brown.circle {
+  background-position: 0px -331px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .brown.active {
+  background: url("../imgs/stylesheet-1.png") 0px -132px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .red.circle {
+  background-position: 0px -356px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul .red.active {
+  background: url("../imgs/stylesheet-1.png") 0px -165px;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container ul::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container .op-delete {
+  position: absolute;
+  font-size: 18px;
+  color: red;
+  bottom: 20px;
+  left: 20px;
+  cursor: pointer;
+}
+
+.reminder .content .content-inner .search-mid .option-detail .container .op-cancle {
+  position: absolute;
+  font-size: 18px;
+  color: #FF4139;
+  bottom: 20px;
+  left: 82%;
+  cursor: pointer;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main {
+  padding: 6px 0 0;
+  position: relative;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .line-top {
+  width: 98%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  background: url(../imgs/packed-3.png);
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item-done {
+  padding-left: 58px;
+  height: 52px;
+  line-height: 52px;
+  color: #aaa;
+  font-size: 19px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item-done .state {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 23px;
+  height: 23px;
+  background: url(../imgs/packed-5.png) no-repeat -92px -526px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item-done .state.active {
+  background: url(../imgs/packed-5.png) -69px -526px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item {
+  position: relative;
+  height: 52px;
+  line-height: 52px;
+  padding-left: 58px;
+  font-size: 19px;
+  box-sizing: border-box;
+  transition: all 0.8s ease;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .control {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 10px;
+  left: 21px;
+  background-image: url(../imgs/packed-5.png);
+  background-repeat: no-repeat;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item input {
+  display: inline;
+  height: 44px;
+  width: 500px;
+  border: none;
+  outline: none;
+  background: transparent;
+  margin-left: 23px;
+  font-size: 18px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .row-top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 98%;
+  height: 2px;
+  background: url("../imgs/packed-3.png");
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .row-bottom {
+  position: absolute;
+  right: 0;
+  bottom: -2px;
+  width: 98%;
+  height: 2px;
+  background: url("../imgs/packed-3.png");
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.green {
+  color: #49bf1f;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.yellow {
+  color: #e0ac00;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.blue {
+  color: #1badf8;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.orange {
+  color: #ff7f00;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.purple {
+  color: #b14bc9;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.brown {
+  color: #a2845e;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item .todo-detail.red {
+  color: #ff2968;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.new {
+  color: #888;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.green.item-active {
+  background: rgba(73, 191, 31, 0.1);
+  border: 1px solid #49bf1f;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.yellow.item-active {
+  background: rgba(224, 172, 0, 0.1);
+  border: 1px solid #e0ac00;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.blue.item-active {
+  background: rgba(27, 173, 248, 0.1);
+  border: 1px solid #1badf8;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.orange.item-active {
+  background: rgba(255, 127, 0, 0.1);
+  border: 1px solid #ff7f00;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.purple.item-active {
+  background: rgba(177, 75, 201, 0.1);
+  border: 1px solid #b14bc9;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.brown.item-active {
+  background: rgba(162, 132, 94, 0.1);
+  border: 1px solid #a2845e;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.red.item-active {
+  background: rgba(255, 41, 104, 0.1);
+  border: 1px solid #ff2968;
+  border-left: none;
+  border-right: none;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.ng-leave {
+  transform: translate3d(-50%, 0, 0);
+  height: 52px;
+  opacity: 1;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .item.ng-leave-active {
+  transform: translate3d(0, 0, 0);
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.reminder .content .content-inner .search-mid .search-mid-main .divider {
+  height: 20px;
+}
+
+.reminder .content .content-inner .search-mid.green {
+  color: #49bf1f;
+}
+
+.reminder .content .content-inner .search-mid.green .container input {
+  color: #49bf1f;
+}
+
+.reminder .content .content-inner .search-mid.yellow {
+  color: #e0ac00;
+}
+
+.reminder .content .content-inner .search-mid.yellow .container input {
+  color: #e0ac00;
+}
+
+.reminder .content .content-inner .search-mid.blue {
+  color: #1badf8;
+}
+
+.reminder .content .content-inner .search-mid.blue .container input {
+  color: #1badf8;
+}
+
+.reminder .content .content-inner .search-mid.orange {
+  color: #ff7f00;
+}
+
+.reminder .content .content-inner .search-mid.orange .container input {
+  color: #ff7f00;
+}
+
+.reminder .content .content-inner .search-mid.purple {
+  color: #b14bc9;
+}
+
+.reminder .content .content-inner .search-mid.purple .container input {
+  color: #b14bc9;
+}
+
+.reminder .content .content-inner .search-mid.brown {
+  color: #a2845e;
+}
+
+.reminder .content .content-inner .search-mid.brown .container input {
+  color: #a2845e;
+}
+
+.reminder .content .content-inner .search-mid.red {
+  color: #ff2968;
+}
+
+.reminder .content .content-inner .search-mid.red .container input {
+  color: #ff2968;
+}
+
+.reminder .content .content-inner .search-mid.green .checked {
+  background-position: -32px -401px;
+}
+
+.reminder .content .content-inner .search-mid.green .unchecked {
+  background-position: -42px -359px;
+}
+
+.reminder .content .content-inner .search-mid.yellow .checked {
+  background-position: -136px -199px;
+}
+
+.reminder .content .content-inner .search-mid.yellow .unchecked {
+  background-position: -136px -267px;
+}
+
+.reminder .content .content-inner .search-mid.blue .checked {
+  background-position: -74px -359px;
+}
+
+.reminder .content .content-inner .search-mid.blue .unchecked {
+  background-position: -136px -167px;
+}
+
+.reminder .content .content-inner .search-mid.orange .checked {
+  background-position: -96px -465px;
+}
+
+.reminder .content .content-inner .search-mid.orange .unchecked {
+  background-position: 0px -433px;
+}
+
+.reminder .content .content-inner .search-mid.purple .checked {
+  background-position: 0px -465px;
+}
+
+.reminder .content .content-inner .search-mid.purple .unchecked {
+  background-position: -64px -465px;
+}
+
+.reminder .content .content-inner .search-mid.brown .checked {
+  background-position: -32px -433px;
+}
+
+.reminder .content .content-inner .search-mid.brown .unchecked {
+  background-position: -96px -433px;
+}
+
+.reminder .content .content-inner .search-mid.red .checked {
+  background-position: -64px -401px;
+}
+
+.reminder .content .content-inner .search-mid.red .unchecked {
+  background-position: -128px -401px;
+}
